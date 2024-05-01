@@ -138,12 +138,6 @@ spec:
       input:
         repoContentsUrl: ${{steps.publishSource.output.repoContentsUrl}}
         catalogInfoPath: /catalog-info.yaml
-    - id: registerSource2
-      name: Register Angular Frontend Component
-      action: catalog:register
-      input:
-        repoContentsUrl: ${{steps.publishSource.output.repoContentsUrl}}
-        catalogInfoPath: /src/main/angular/catalog-info.yaml
     - id: createArgoResources
       name: Create ArgoCD Resources
       action: argocd:create-resources
