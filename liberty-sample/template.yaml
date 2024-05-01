@@ -1,7 +1,7 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: Liberty Getting Started Application
+  name: Liberty
   title: Liberty Getting Started
   description: Creates a Liberty service hosting MicroProfile
   tags:
