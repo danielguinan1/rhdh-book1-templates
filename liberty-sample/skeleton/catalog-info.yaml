@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: ${{values.component_id}}-service
-  description: 'The Quarkus service for ${{values.component_id}} (${{values.description}})'
+  description: 'The Liberty service for ${{values.component_id}} (${{values.description}})'
   annotations:
     argocd/app-name: ${{values.component_id}}-dev
     backstage.io/kubernetes-id: ${{values.component_id}}
@@ -14,7 +14,7 @@ metadata:
     backstage.io/kubernetes-id: ${{values.component_id}}
   tags:
     - java
-    - quarkus
+    - liberty
     - maven
     - book
     - example
@@ -25,8 +25,8 @@ metadata:
     - url: https://console-openshift-console${{values.cluster_id}}/k8s/ns/${{values.namespace}}/deployments/${{values.component_id}}
       title: Deployment
       icon: web
-    - url: https://devspaces${{values.cluster_id}}/#https://${{values.git_host}}/${{values.repoOwner}}/${{values.repoName}}?che-editor=che-incubator/che-code/latest&devfilePath=.devfile-vscode.yaml
-      title: OpenShift Dev Spaces
+    - url: https://openliberty.io/docs/latest/overview.html
+      title: Open Liberty Docs
       icon: web
 spec:
   type: service
@@ -50,7 +50,7 @@ apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: ${{values.component_id}}-api
-  description: API surface exposed by the Quarkus service
+  description: API surface exposed by the Liberty service
   links:
     - url: https://${{values.component_id}}-${{values.namespace}}${{values.cluster_id}}/q/swagger-ui
       title: Swagger UI
