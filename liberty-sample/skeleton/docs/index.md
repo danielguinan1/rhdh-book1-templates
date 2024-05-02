@@ -1,5 +1,3 @@
-![Open Liberty logo](https://github.com/OpenLiberty/logos/blob/main/combomark/png/OL_logo_green_on_white.png)
-
 # Open Liberty Getting Started sample
 
 ## Overview
@@ -66,7 +64,6 @@ podman run -p 9080:9080 icr.io/appcafe/open-liberty/samples/getting-started
 ### Access the application
 Open a browser to http://localhost:9080
 
-![image](https://user-images.githubusercontent.com/3076261/117993383-4f34c980-b305-11eb-94b5-fa7319bc2850.png)
 
 ## Run the functional tests
 
