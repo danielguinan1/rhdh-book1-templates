@@ -30,7 +30,7 @@ spec:
           title: Description
           type: string
           description: Help others understand what this component is for
-          default: Creates a Quarkus service hosting an Angular frontend
+          default: Creates a Liberty getting started app
     - title: Provide information about the new component
       required:
         - cluster_id
