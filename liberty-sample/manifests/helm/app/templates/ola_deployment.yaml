@@ -3,7 +3,9 @@ kind: OpenLibertyApplication
 metadata:
   name: getting-started
   labels:
-    name: system
+    {{- include "backstage.labels" . | nindent 4 }}
+    {{- include "liberty-template.labels" . | nindent 4 }}
+    app.kubernetes.io/part-of: idp-book-example
 spec:
   applicationImage: icr.io/appcafe/open-liberty
   expose: true
