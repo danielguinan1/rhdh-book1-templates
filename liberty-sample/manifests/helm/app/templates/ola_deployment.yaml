@@ -6,6 +6,9 @@ metadata:
     name: system
 spec:
   applicationImage: icr.io/appcafe/open-liberty
+  expose: true
+  service:
+    type: ClusterIP
   env:
     - name: WLP_LOGGING_MESSAGE_FORMAT
       value: "json"
