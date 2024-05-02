@@ -1,7 +1,7 @@
 apiVersion: apps.openliberty.io/v1
 kind: OpenLibertyApplication
 metadata:
-  name: getting-started
+  name: {{ .Values.app.componentId }}
   labels:
     {{- include "backstage.labels" . | nindent 4 }}
     {{- include "liberty-template.labels" . | nindent 4 }}
