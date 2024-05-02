@@ -52,18 +52,6 @@ spec:
           workspace: source-folder
         - name: maven-settings
           workspace: maven-settings
-    - name: build-and-push
-      params:
-        - name: IMAGE
-          value: $(params.output-image)
-      runAfter:
-        - package
-      taskRef:
-        kind: Task
-        name: kaniko-{{ .Values.app.name }}
-      workspaces:
-        - name: source
-          workspace: source-folder
     - name: resync
       params:
         - name: COMPONENT_ID
@@ -71,7 +59,7 @@ spec:
         - name: NAMESPACE
           value: $(params.namespace)
       runAfter:
-        - build-and-push
+        - package
       taskRef:
         kind: Task
         name: resync-{{ .Values.app.name }}
