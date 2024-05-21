@@ -132,6 +132,31 @@ spec:
         defaultBranch: main
         protectDefaultBranch: false
         repoVisibility: public
+    - id: ciTemplate
+      name: Generating the CI Component
+      action: fetch:template
+      input:
+        url: ${{ parameters.ci }}
+        copyWithoutTemplating:
+          - .github/workflows/
+        values:
+          orgName: ${{ parameters.orgName }}
+          repoName: ${{ parameters.repoName }}
+          owner: ${{ parameters.owner }}
+          system: ${{ parameters.system }}
+          applicationType: api
+          description: ${{ parameters.description }}
+          namespace: ${{ parameters.namespace }}
+          imageUrl: ${{ parameters.imageUrl }}
+          imageBuilder: s2i-java
+          imageRepository: ${{ parameters.imageRepository }}
+          port: ${{ parameters.port }}
+          ci: ${{ parameters.ci }}
+          groupId: ${{ parameters.groupId }}
+          artifactId: ${{ parameters.artifactId }}
+          javaPackageName: ${{ parameters.javaPackageName}}
+          sourceControl: github.com
+
     - id: templateGitops
       name: Generating the deployment resources and artefacts
       action: fetch:template
